@@ -1,932 +1,256 @@
-# SolidPy
+# SolidPy 
 
+  
+  
 ## Overview
 [OSC]:http://www.openscad.org
 [OSCUM]:http://en.wikibooks.org/wiki/OpenSCAD_User_Manual
 
-SolidPy is a python module that allows generates [OpenSCAD][OSC] code from python python code. The aim of developing this  python module is to simplify and enhance the design experience of code-based, parametric, solid modeling. 
-### Features
+SolidPy is a python module that allows generates [OpenSCAD][OSC] code from python code. The aim of developing this SolidPy is to simplify and enhance the design experience of code-based, parametric, solid modeling. 
+
+Python + SolidPy -> OpenSCAD code -> Solid Model
+
+## Language Differences
+ 
+ 
+ | SolidPy |Open SCAD|Difference
+ |:------- | :-------- | :---------
+ | a = Sphere(r=2)| sphere(r=2) | First letter Capitalized
+ | b = Cube(1,2,3) | cube([1,2,3]) | Square brackets are optional
+ | a.color("red",0.5)|color("red",0.5) cube([1,2,3]) | Objects are transformed using methods |
+ | b = a.copy()| no equivalent| Shapes are objects |
+ | c = a + b |union(){sphere(r=2) cube([1,2,3])}| Easy to read syntax|
+ 
+
+## Features
 * Simple, flexible syntax
+* Use of a Python IDE and the Python language is powerful 
 * Treat objects like objects (not text)
 * Use existing [OpenSCAD][OSC] modules
 * Grow the object tree and pick the fruit you want (instead of taking the whole tree)
 * AutoColoring mode
 * Reference another solids attributes
-* Copy solid objects
-* Augmentation of difference() and intersection() **coming soon*
+* Copy shapes
+* SolidPy Class can be extended to suit 
 
-### SolidPy Classes
-The SolidPy class was designed for maximum inheritance and flexibility. Below is an explanation of each classes interface. For specific OpenSCAD information see the [OpenSCAD Users Manual][OSCUM].
 
-### 3D Objects
-#### Cube
-Creates a Cube object. Accepts two forms:
+## SolidPy Classes
+The SolidPy class was designed for maximum inheritance and flexibility. Each are named after the OpenSCAD they represent except the names are capitalized.
 
-	Cube( [x,y,z],center) or Cube( x,y,z,center)
-    	Cube(1) -> Cube(1,1,1)
-    	center: If True, object is centered at (0,0,0). True by default.
-#### Cylinder
-		Cylinder(h,r, r2, fa, fs, fn, center )
-        	h= height
-        	r=radius note: if r2 == None->r2=rad
-        	fa = Angle in degrees. None by default.
-        	fs= Angle in mm. None by default.
-       	 	center: If True, object is centered at (0,0,0)
+ Below shows the interface for each class. Treat the arguments for each just as they are for OpenSCAD. Of course there will be differences in syntax. Also some commands will allow a single object or a list of objects to be used as an argument. For specific OpenSCAD information see the [OpenSCAD Users Manual][OSCUM].
 
-#### Sphere
-Creates a Sphere object.
 
-    Sphere(r,fa=None,fs=None,fn=None)
-    	r=radius
-    	fa = Angle in degrees. None by default.
-    	fs= Angle in mm, None by default.
-    	center: If True, object is centered at (0,0,0). True by default.
+## Shapes
+### Cube(self, x, y = None, z = None, center = None) or Cube(self, [x,y,z] center = None)
+Returns a SolidPyObj which represents a cube. 
 
-#### DXF_linear_extrude 
-####Linear Extrude
-Uses the same syntax as OpenSCAD.
+Examples: `myBox = Cube([3,4,5])` or `myBox = Cube(3,4,5)`
 
-    Linear_extrude(height,center,convexity,twist)
+
+### Cylinder(h, r, r2 = None, fa = None, fs = None, fn = None, center = None)
+Returns a SolidPyObj which represents a cylinder. 
+       	 	
+ example:    `myTube = Cylinder(h = 5, r=10, center = True )`
+ 
+ 
+### Sphere(r, fa = None, fs = None, fn = None)
+Returns a SolidPyObj which represents a cylinder. 
+
+Notice that OpenSCAD uses **$**fs and **$**fn while SolidPy drops the **$**.
+
+ example: `myBall = Sphere(r=5)`
+
+
+
+### DXF_linear_extrude(filename, height, convexity = None, center = None)
+Creates a 3D object by extruding a DXF file. Returns a SolidPyObj object.
+ 
+   myShape = DXF_linear_extrude(mydxfFile, h=5)
+
+   
+### Linear_extrude(height,center,convexity,twist)
+Extrudes shapes to make 3D object. Returns a SolidPyObj object.
+
+### Import(fileName)
+Imports a file for use in the current OpenSCAD model. Returns a SolidPyObj object.
+
+### Module(moduleName,**kwargs) 
+Calls a OpenSCAD Module brought in by the **Use(filename)** command. Arguments to the module must be given in keyworded values. Returns a SolidPyObj object.
+
+    Use("Rachet Tooth.scad")
+
+    tooth = Module("rachetTooth", ht = 1, thk=8, ra = 16, ba = 80)
     
-#### Import
-#### Import_dxf Linear_extrude
-#### Module 
-#### Polygon 
-#### Polyhedron 
-Uses the same syntax as OpenSCAD.
+### Polygon(pointsList, pathList, convexity)
+Returns a SolidPyObj object.
 
-    Polyhedron(points,triangles)
-#### Projection 
-#### Rotate_extrude
+###   Polyhedron(points,triangles) 
 
-###2D Objects
-#### Square
+  Returns a SolidPyObj object.
 
-### CGS
+### Projection(cut = true) 
+  Returns a SolidPyObj object.
 
-###Transforms
+### Rotate_extrude(convexity = None, fn = None)
+ Returns a SolidPyObj object.
 
-###Utility
+### Square([x,y]) or Square(x, y)
 
-####copy(SolidPyObj)
+## CGS Operations
+CGS object hold other SolidPy objects as child objects. They perform the CGS operation on the child objects as described below.
+ 
+### '+' Operator
+### Union()
+### Union([solidPyobjs])
+### Union(solidObj1 = None, solidObj2 = None)
+
+
+Union() returns an empty Union()  object that can be used to add SolidPy objects at a later time
+Union ([objectList]) will create a union that contains the objects in [objectList]
+Union ([objectList1], [objectList2]) will create a union that contains the objects in both lists.
+
+An alternate form of Union is the  **'+'** operator.
+
+    a = Cube(5,5,5)
+    b = sphere(r = 6)
+    myUnion = a + b
+    
+- If 'a' Union() then 'b' is added to the 'a' Union()
+- If 'b' Union() then 'a' is added to the 'b' Union()
+- If neither ''a or 'b' is a Union then both are added to a new union.
+
+### '-' Operator
+###Difference(solidObj1 = None, solidObj2 = None)
+### Difference()
+### Difference([solidPyobjs])
+
+Difference() returns an empty Difference() that can be used to add SolidPy objects at a later time.
+Difference ([objectList]) will create a Difference() that contains the objects in [objectList]
+Difference ([objectList1], [objectList2]) will create a Difference() that contains the objects in both lists.
+The first object added to the Difference() object is the one that all other will be subtracted from.
+
+An alternate form of Union is the  **'-'** operator.
+
+    a = Cube(5,5,5)
+    b = sphere(r = 6)
+    myDiff = a - b
+    
+- If 'a' is a Difference() then 'b' is subtracted from  the 'a' Difference()
+- If 'a' is not a Difference() object a new is made placing 'a' as its first child from which 'b' will be subtracted.
+
+
+### '*' Operator
+###Intersection(solidObj1 = None, solidObj2 = None)
+### Intersection()
+### Intersection([solidPyobjs])
+
+Intersection() returns an empty Intersection() that can be used to add SolidPy objects at a later time.
+Intersection ([objectList]) will create an Intersection() that contains the objects in [objectList]
+Intersection ([objectList1], [objectList2]) will create an Intersection that contains the objects in both lists.
+The all objects added to the Intersection() object will define the intersection.
+
+An alternate form of Union is the  **'*'** operator.
+
+    a = Cube(5,5,5)
+    b = sphere(r = 6)
+    myIntersect = a * b
+    
+- If 'a' is an Intersection() then 'b' is intersected with the 'a' Intersection()
+- If 'b' is an Intersection() then 'a' is intersected with the 'b' Intersection()
+- If 'a' or 'b' are not  Intersection() objects, a new one is made.
+
+
+### Minkowski( solidObj1 = None, solidObj2 = None)
+Returns the Minkowski parent of solidObj1 and solidObj2.
+
+### Hull(solidObj1 = None, solidObj2 = None)
+Returns the Minkowski parent of solidObj1 and solidObj2.
+
+##Transforms
+Transforms are methods of SolidPy objects. Transforms are kept in the objects transform stack.
+### translate(x,y,z)
+###translate([x,y,z])
+ | SolidPy |Open SCAD
+ |:------- | :-------- |
+ | a = Sphere(r=2)|sphere(r=2)
+ | a.translate(2,4,6)| translate([2,4,6]){sphere(r=2)} 
+ 
+ 
+### mirror(x,y,z)
+### mirror([x,y,z])
+ | SolidPy |Open SCAD
+ |:------- | :-------- |
+ | a = Sphere(r=2)|sphere(r=2)
+ | a.translate(2,4,6)| translate([2,4,6]){sphere(r=2)} 
+
+### multmatrix(m)
+m is a 4x4 matrix.
+
+ | SolidPy |Open SCAD
+ |:------- | :-------- |
+ | a = Sphere(r=2)|sphere(r=2)
+ | a.multmatrix(m)| multmatrix(m){sphere(r=2)} 
+
+
+### scale(x,y,z)
+### scale([x,y,z])
+ | SolidPy |Open SCAD
+ |:------- | :-------- |
+ | a = Sphere(r=2)|sphere(r=2)
+ | a.scale(2,4,6)| scale([2,4,6]){sphere(r=2)} 
+ 
+###color("color",alpha)
+### color([r,g,b],alpha)
+ | SolidPy |Open SCAD
+ |:------- | :-------- |
+ | a = Sphere(r=2)|sphere(r=2)
+ | a.color("red", 0.5)| color("red", 0.5){sphere(r=2)} 
+
+##Utility
+
+###copy(SolidPyObj)
 Copy creates an exact duplicate of the solid object except the parent of the duplicate is set to `None` and children are duplicates of the original.
 
      myBox = Cube(4,5,6)
 	 myNewBox = myBox.copy()
 
-####use("filename.scad")
+###use("filename.scad")
 This loads an OpenSCAD file in order to access modules within that file. 
-####include()
-is not implemented.
+Note that **include()** is not implemented.
+
+###writeSCADfile(fileName, *args):
+fileName = the SCAD file to save to. Include the '.scad' extension
+*args can be SolidPy objects or lists of SolidPy objects.
 
 ###Extras
-####inches(x)
-####autoColor
-
-
+###inches(x)
 Everything in OpenSCAD is assumed to be millimeters(mm). inches(X) returns 25.4 * X to 
 convert x that is in inches to mm.
 
 
 
+##Defaults
+Defaults are to be set by the user for their own taste.
+###tab
+By default 'Defaults.tab = " " * 4' This set the tab length in the OpenSCAD code written by writeSCADfile().
+
+###includeFiles
+
+Defaults.includeFiles is modified by the **Use(filename)** command to hold files to be included. It can also be modified directly.
+###fs
+Defaults.fs sets the Special Variable in OpenSCAD **$fs** at the beginning of the OpenSCAD file.
+###fn
+Defaults.fn sets the Special Variable in OpenSCAD **$fn** at the beginning of the OpenSCAD file.
+###fa
+Defaults.fa sets the Special Variable in OpenSCAD **$fa** at the beginning of the OpenSCAD file.
+### autoColor
+When `Default.autoColor == True` colors are automatically applied to all objects at their creation given by the order set in the Default.color[] list
+
+###colors
+Defaults.colors are used by the autoColor setting to automatically apply a color to a SolidPy object when it is created. 
+
+    Defaults.colors = ["blue", "green", "orange", "yellow", "SpringGreen"]
+
+Colors can be found at [OpenSCAD][OSC].
 
 
-`Cube([5,5,5])` can now be `Cube(5,5,5)`
-
-SolidPy
-Modules
-copy
-Classes
-__builtin__.object SolidPyObj
-CGS
-Difference Hull Intersection Minkowski Union
-Circle
- CGS(SolidPyObj)
-           Generic class that other CGS classes inherit from. Will accept
-           lists or individual solid objects.
-Method resolution order:
-CGS
-SolidPyObj __builtin__.object
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼Methods defined here:
-
-￼￼__init__(self, solidPyObj1, solidPyObj2) add(self, solidPyObj1)
-renderOSC(self, protoStr) set__tabLvl(self, lvl)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼list of weak references to the object (if defined)
-￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 2 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Circle(SolidPyObj)
-Method resolution order:
-Circle SolidPyObj __builtin__.object
-Methods defined here: __init__(self, r, fn=None) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 3 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-          Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Cube(SolidPyObj)
-    Cube( [x,y,z],center=True) or Cube( x,y,z,center)
-    size = 1 -> [1,1,1]
-    center: If True, object is centered at (0,0,0)
-Method resolution order:
-Cube SolidPyObj
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 4 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼__builtin__.object
-￼￼￼￼￼Methods defined here:
-__init__(self, x, y=None, z=None, center=False) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj:
-__dict__
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼dictionary for instance variables (if defined)
-￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 5 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Cylinder(SolidPyObj)
-Method resolution order:
-Cylinder SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, h, rad, r2=None, fa=None, fs=None, fn=None, center=None) h= height, r=radius note if r2 == None->r2=rad
-fa = Angle in degrees
-fs= Angle in mm
-center: If True, object is centered at (0,0,0) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0)
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 6 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-     list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼class DXF_linear_extrude(SolidPyObj)
-￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 7 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼￼##dxf_linear_extrude(file="finn.dxf", height=3, convexity=1, center=true);
-Method resolution order:
-DXF_linear_extrude SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, filename, height, convexity=None, center=None) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 8 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Difference(CGS)
-Method resolution order:
-Difference
-CGS
-SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, solidPyObj1=None, solidPyObj2=None) renderOSC(self)
-Methods inherited from CGS: add(self, solidPyObj1) set__tabLvl(self, lvl)
-Methods inherited from SolidPyObj:
-OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 9 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼__add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a
-__mul__(self, solidPyObj1) __sub__(self, solidPyObj1) color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-     list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼fn = None
-￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 10 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼fs = None includeFiles = []
-class Hull(CGS)
-Method resolution order:
-Hull
-CGS
-SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, solidPyObj1=None, solidPyObj2=None) renderOSC(self)
-Methods inherited from CGS: add(self, solidPyObj1) set__tabLvl(self, lvl)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼release(self)
-￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 11 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼rotate(self, x, y=None, z=None, v=None)
-Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Import(SolidPyObj)
-Method resolution order:
-Import SolidPyObj __builtin__.object
-Methods defined here: __init__(self, filename) renderOSC(self)
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼Methods inherited from SolidPyObj:
-￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 12 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object
-__add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a
-__mul__(self, solidPyObj1) __sub__(self, solidPyObj1) color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-     list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 13 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼fa = None
-fn = None
-fs = None includeFiles = []
-class Import_dxf(SolidPyObj)
-Method resolution order:
-Import_dxf SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, filename, layer=None, origin=None, scale=None) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-Puts a rotate transform on the transform stack
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 14 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Intersection(CGS)
-Method resolution order:
-Intersection
-CGS
-SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, solidPyObj1=None, solidPyObj2=None) renderOSC(self)
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼Methods inherited from CGS:
-￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 15 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼add(self, solidPyObj1) set__tabLvl(self, lvl)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-     list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj: autoColor = False
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 16 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None
-includeFiles = []
-class Linear_extrude(SolidPyObj)
-Method resolution order:
-Linear_extrude SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, flatPyObj, height, center=None, convexity=None, twist=None) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼release(self)
-￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 17 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼rotate(self, x, y=None, z=None, v=None)
-Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Minkowski(CGS)
-Method resolution order:
-Minkowski
-CGS
-SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, solidPyObj1=None, solidPyObj2=None) renderOSC(self)
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 18 of 34
-
-￼Python: module SolidPy 9/18/12 6:33 AM
-￼￼￼￼￼Methods inherited from CGS: add(self, solidPyObj1) set__tabLvl(self, lvl)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼list of weak references to the object (if defined)
-￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 19 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Module(SolidPyObj)
-Method resolution order:
-Module SolidPyObj __builtin__.object
-Methods defined here: __init__(self, name, **kwargs) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼multmatrix(self, m)
-￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 20 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼          Puts a multmatrix transform on the transform stack
-          *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-          Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Polygon(SolidPyObj)
-Method resolution order:
-Polygon SolidPyObj __builtin__.object
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼Methods defined here:
-￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 21 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼__init__(self, points, paths=None, convexity=None) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-     list of weak references to the object (if defined)
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼Data and other attributes inherited from SolidPyObj:
-￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 22 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None
-includeFiles = []
-class Polyhedron(SolidPyObj)
-Method resolution order:
-Polyhedron SolidPyObj __builtin__.object
-Methods defined here: __init__(self, points, triangles) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 23 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼release(self)
-rotate(self, x, y=None, z=None, v=None)
-          Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Projection(SolidPyObj) ##projection(cut = true)
-Method resolution order:
-Projection SolidPyObj __builtin__.object
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼Methods defined here:
-￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 24 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼__init__(self, flatPyObj, cut) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-     list of weak references to the object (if defined)
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼Data and other attributes inherited from SolidPyObj:
-￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 25 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None
-includeFiles = []
-class Rotate_extrude(SolidPyObj)
-Method resolution order:
-Rotate_extrude SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, flatPyObj, convexity=None, fn=None) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 26 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼release(self)
-rotate(self, x, y=None, z=None, v=None)
-          Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class SolidPyObj(__builtin__.object) Methods defined here:
-OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object
-__add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼__init__(self)
-￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 27 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼__mul__(self, solidPyObj1) __sub__(self, solidPyObj1) color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors defined here:
-__dict__
-     dictionary for instance variables (if defined)
-__weakref__
-     list of weak references to the object (if defined)
-Data and other attributes defined here:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None fs = None
-￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 28 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼includeFiles = []
-class Sphere(SolidPyObj)
-    r=radius
-    fa = Angle in degrees
-    fs= Angle in mm
-    center: If True, object is centered at (0,0,0)
-Method resolution order:
-Sphere SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, rad, fa=None, fs=None, fn=None) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-          Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 29 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-          dictionary for instance variables (if defined)
-__weakref__
-          list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-class Square(SolidPyObj)
-Method resolution order:
-Square SolidPyObj __builtin__.object
-Methods defined here: __init__(self, x, y, center=None) renderOSC(self)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 30 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-release(self)
-rotate(self, x, y=None, z=None, v=None)
-     Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-set__tabLvl(self, lvl)
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-     dictionary for instance variables (if defined)
-__weakref__
-     list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼fn = None
-￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 31 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼fs = None includeFiles = []
-class Union(CGS)
-Method resolution order:
-Union
-CGS
-SolidPyObj __builtin__.object
-Methods defined here:
-__init__(self, solidPyObj1=None, solidPyObj2=None) renderOSC(self)
-Methods inherited from CGS: add(self, solidPyObj1) set__tabLvl(self, lvl)
-Methods inherited from SolidPyObj: OSCString(self, protoStr)
-Returns the OpenSCAD string to make the object __add__(self, solidPyObj1)
-a=x+y calls x.__add__(y)->a __mul__(self, solidPyObj1) __sub__(self, solidPyObj1)
-color(self, color='yellow', alpha=1.0) copy(self)
-mirror(self, x, y=None, z=None)
-Puts a mirror transform on the transform stack mirror( [x,y,z]) or mirror(x,y,z)
-mirror (1) -> [1,1,1]
-multmatrix(self, m)
-Puts a multmatrix transform on the transform stack *** not tested ***
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼release(self)
-￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 32 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-rotate(self, x, y=None, z=None, v=None)
-Puts a rotate transform on the transform stack
-scale(self, x, y=None, z=None)
-Puts a scale transform on the transform stack
-translate(self, x, y=None, z=None)
-Puts a translate transform on the transform stack translate( [x,y,z]) or translate(x,y,z)
-translate (1) -> [1,1,1]
-Data descriptors inherited from SolidPyObj: __dict__
-                  dictionary for instance variables (if defined)
-__weakref__
-                  list of weak references to the object (if defined)
-Data and other attributes inherited from SolidPyObj:
-autoColor = False
-colorCnt = 0
-colors = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose'] fa = None
-fn = None
-fs = None includeFiles = []
-Functions
-Use(fileName) boolStr(abool)
-             retuns a lower case string of 'true' or 'false'
-inches(x)
-converts inches to mm
-main()
-writeSCADfile(fileName, *args)
-fileName = the SCAD file to save to. Include the '.scad' extension args can be SolidPyObj or lists of SolidPyObj
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 33 of 34
-
-Python: module SolidPy 9/18/12 6:33 AM
-￼￼file:///Users/bjbsquared/Dropbox/SolidPy/SolidPy.htm Page 34 of 34
