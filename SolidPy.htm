@@ -1,0 +1,1689 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module SolidPy</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>SolidPy</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:///C:/documents%20and%20settings/bjbsquared/my%20documents/my%20dropbox/solidpy/solidpy.py">c:\documents and settings\bjbsquared\my documents\my dropbox\solidpy\solidpy.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="__builtin__.html#object">__builtin__.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="SolidPy.html#SolidPyObj">SolidPyObj</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="SolidPy.html#CGS">CGS</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="SolidPy.html#Difference">Difference</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Hull">Hull</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Intersection">Intersection</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Minkowski">Minkowski</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Union">Union</a>
+</font></dt></dl>
+</dd>
+<dt><font face="helvetica, arial"><a href="SolidPy.html#Circle">Circle</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Cube">Cube</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Cylinder">Cylinder</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#DXF_linear_extrude">DXF_linear_extrude</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Import">Import</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Import_dxf">Import_dxf</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Linear_extrude">Linear_extrude</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Module">Module</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Polygon">Polygon</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Polyhedron">Polyhedron</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Projection">Projection</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Rotate_extrude">Rotate_extrude</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Sphere">Sphere</a>
+</font></dt><dt><font face="helvetica, arial"><a href="SolidPy.html#Square">Square</a>
+</font></dt></dl>
+</dd>
+</dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="CGS">class <strong>CGS</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>Generic&nbsp;class&nbsp;that&nbsp;other&nbsp;<a href="#CGS">CGS</a>&nbsp;classes&nbsp;inherit&nbsp;from.&nbsp;Will&nbsp;accept<br>
+lists&nbsp;or&nbsp;individual&nbsp;solid&nbsp;objects.<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#CGS">CGS</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="CGS-__init__"><strong>__init__</strong></a>(self, solidPyObj1, solidPyObj2)</dt></dl>
+
+<dl><dt><a name="CGS-add"><strong>add</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="CGS-renderOSC"><strong>renderOSC</strong></a>(self, protoStr)</dt></dl>
+
+<dl><dt><a name="CGS-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="CGS-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="CGS-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#CGS-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="CGS-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="CGS-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="CGS-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="CGS-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="CGS-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#CGS-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#CGS-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="CGS-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="CGS-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="CGS-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="CGS-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="CGS-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#CGS-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#CGS-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Circle">class <strong>Circle</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Circle">Circle</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Circle-__init__"><strong>__init__</strong></a>(self, r, fn<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Circle-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Circle-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Circle-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Circle-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Circle-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Circle-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Circle-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Circle-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Circle-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Circle-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Circle-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Circle-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Circle-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Circle-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Circle-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Circle-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Circle-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Circle-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Circle-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Cube">class <strong>Cube</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Cube">Cube</a>(&nbsp;[x,y,z],center=True)&nbsp;or&nbsp;<a href="#Cube">Cube</a>(&nbsp;x,y,z,center)<br>
+size&nbsp;=&nbsp;1&nbsp;-&gt;&nbsp;[1,1,1]<br>
+center:&nbsp;If&nbsp;True,&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;is&nbsp;centered&nbsp;at&nbsp;(0,0,0)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Cube">Cube</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Cube-__init__"><strong>__init__</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, center<font color="#909090">=False</font>)</dt></dl>
+
+<dl><dt><a name="Cube-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Cube-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Cube-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Cube-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Cube-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Cube-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Cube-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Cube-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Cube-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Cube-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Cube-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Cube-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Cube-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Cube-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Cube-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Cube-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Cube-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Cube-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Cube-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Cylinder">class <strong>Cylinder</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Cylinder">Cylinder</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Cylinder-__init__"><strong>__init__</strong></a>(self, h, rad, r2<font color="#909090">=None</font>, fa<font color="#909090">=None</font>, fs<font color="#909090">=None</font>, fn<font color="#909090">=None</font>, center<font color="#909090">=None</font>)</dt><dd><tt>h=&nbsp;height,&nbsp;rad=radius&nbsp;note&nbsp;if&nbsp;r2&nbsp;==&nbsp;None-&gt;r2=rad<br>
+fa&nbsp;=&nbsp;Angle&nbsp;in&nbsp;degrees<br>
+fs=&nbsp;Angle&nbsp;in&nbsp;mm<br>
+center:&nbsp;If&nbsp;True,&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;is&nbsp;centered&nbsp;at&nbsp;(0,0,0)</tt></dd></dl>
+
+<dl><dt><a name="Cylinder-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Cylinder-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Cylinder-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Cylinder-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Cylinder-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Cylinder-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Cylinder-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Cylinder-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Cylinder-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Cylinder-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Cylinder-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Cylinder-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Cylinder-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Cylinder-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Cylinder-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Cylinder-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Cylinder-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Cylinder-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Cylinder-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DXF_linear_extrude">class <strong>DXF_linear_extrude</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>##dxf_linear_extrude(file="finn.dxf",&nbsp;height=3,&nbsp;convexity=1,&nbsp;center=true);<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#DXF_linear_extrude">DXF_linear_extrude</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DXF_linear_extrude-__init__"><strong>__init__</strong></a>(self, filename, height, convexity<font color="#909090">=None</font>, center<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="DXF_linear_extrude-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="DXF_linear_extrude-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="DXF_linear_extrude-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#DXF_linear_extrude-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="DXF_linear_extrude-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="DXF_linear_extrude-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="DXF_linear_extrude-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="DXF_linear_extrude-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DXF_linear_extrude-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#DXF_linear_extrude-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#DXF_linear_extrude-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="DXF_linear_extrude-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="DXF_linear_extrude-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="DXF_linear_extrude-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="DXF_linear_extrude-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="DXF_linear_extrude-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="DXF_linear_extrude-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#DXF_linear_extrude-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#DXF_linear_extrude-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Difference">class <strong>Difference</strong></a>(<a href="SolidPy.html#CGS">CGS</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Difference">Difference</a></dd>
+<dd><a href="SolidPy.html#CGS">CGS</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Difference-__init__"><strong>__init__</strong></a>(self, solidPyObj1<font color="#909090">=None</font>, solidPyObj2<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Difference-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#CGS">CGS</a>:<br>
+<dl><dt><a name="Difference-add"><strong>add</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Difference-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Difference-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Difference-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Difference-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Difference-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Difference-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Difference-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Difference-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Difference-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Difference-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Difference-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Difference-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Difference-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Difference-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Difference-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Difference-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Difference-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Difference-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Hull">class <strong>Hull</strong></a>(<a href="SolidPy.html#CGS">CGS</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Hull">Hull</a></dd>
+<dd><a href="SolidPy.html#CGS">CGS</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Hull-__init__"><strong>__init__</strong></a>(self, solidPyObj1<font color="#909090">=None</font>, solidPyObj2<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Hull-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#CGS">CGS</a>:<br>
+<dl><dt><a name="Hull-add"><strong>add</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Hull-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Hull-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Hull-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Hull-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Hull-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Hull-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Hull-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Hull-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Hull-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Hull-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Hull-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Hull-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Hull-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Hull-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Hull-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Hull-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Hull-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Hull-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Import">class <strong>Import</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Import">Import</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Import-__init__"><strong>__init__</strong></a>(self, filename)</dt></dl>
+
+<dl><dt><a name="Import-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Import-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Import-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Import-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Import-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Import-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Import-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Import-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Import-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Import-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Import-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Import-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Import-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Import-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Import-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Import-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Import-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Import-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Import-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Import_dxf">class <strong>Import_dxf</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Import_dxf">Import_dxf</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Import_dxf-__init__"><strong>__init__</strong></a>(self, filename, layer<font color="#909090">=None</font>, origin<font color="#909090">=None</font>, scale<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Import_dxf-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Import_dxf-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Import_dxf-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Import_dxf-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Import_dxf-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Import_dxf-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Import_dxf-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Import_dxf-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Import_dxf-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Import_dxf-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Import_dxf-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Import_dxf-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Import_dxf-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Import_dxf-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Import_dxf-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Import_dxf-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Import_dxf-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Import_dxf-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Import_dxf-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Intersection">class <strong>Intersection</strong></a>(<a href="SolidPy.html#CGS">CGS</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Intersection">Intersection</a></dd>
+<dd><a href="SolidPy.html#CGS">CGS</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Intersection-__init__"><strong>__init__</strong></a>(self, solidPyObj1<font color="#909090">=None</font>, solidPyObj2<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Intersection-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#CGS">CGS</a>:<br>
+<dl><dt><a name="Intersection-add"><strong>add</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Intersection-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Intersection-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Intersection-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Intersection-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Intersection-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Intersection-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Intersection-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Intersection-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Intersection-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Intersection-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Intersection-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Intersection-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Intersection-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Intersection-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Intersection-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Intersection-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Intersection-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Intersection-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Linear_extrude">class <strong>Linear_extrude</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Linear_extrude">Linear_extrude</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Linear_extrude-__init__"><strong>__init__</strong></a>(self, flatPyObj, height, center<font color="#909090">=None</font>, convexity<font color="#909090">=None</font>, twist<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Linear_extrude-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Linear_extrude-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Linear_extrude-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Linear_extrude-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Linear_extrude-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Linear_extrude-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Linear_extrude-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Linear_extrude-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Linear_extrude-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Linear_extrude-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Linear_extrude-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Linear_extrude-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Linear_extrude-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Linear_extrude-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Linear_extrude-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Linear_extrude-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Linear_extrude-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Linear_extrude-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Linear_extrude-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Minkowski">class <strong>Minkowski</strong></a>(<a href="SolidPy.html#CGS">CGS</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Minkowski">Minkowski</a></dd>
+<dd><a href="SolidPy.html#CGS">CGS</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Minkowski-__init__"><strong>__init__</strong></a>(self, solidPyObj1<font color="#909090">=None</font>, solidPyObj2<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Minkowski-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#CGS">CGS</a>:<br>
+<dl><dt><a name="Minkowski-add"><strong>add</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Minkowski-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Minkowski-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Minkowski-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Minkowski-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Minkowski-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Minkowski-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Minkowski-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Minkowski-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Minkowski-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Minkowski-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Minkowski-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Minkowski-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Minkowski-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Minkowski-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Minkowski-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Minkowski-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Minkowski-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Minkowski-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Module">class <strong>Module</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Module">Module</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Module-__init__"><strong>__init__</strong></a>(self, name, **kwargs)</dt></dl>
+
+<dl><dt><a name="Module-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Module-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Module-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Module-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Module-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Module-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Module-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Module-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Module-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Module-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Module-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Module-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Module-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Module-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Module-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Module-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Module-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Module-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Module-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Polygon">class <strong>Polygon</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Polygon">Polygon</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Polygon-__init__"><strong>__init__</strong></a>(self, points, paths<font color="#909090">=None</font>, convexity<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Polygon-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Polygon-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Polygon-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Polygon-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Polygon-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Polygon-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Polygon-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Polygon-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Polygon-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Polygon-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Polygon-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Polygon-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Polygon-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Polygon-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Polygon-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Polygon-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Polygon-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Polygon-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Polygon-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Polyhedron">class <strong>Polyhedron</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Polyhedron">Polyhedron</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Polyhedron-__init__"><strong>__init__</strong></a>(self, points, triangles)</dt></dl>
+
+<dl><dt><a name="Polyhedron-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Polyhedron-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Polyhedron-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Polyhedron-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Polyhedron-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Polyhedron-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Polyhedron-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Polyhedron-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Polyhedron-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Polyhedron-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Polyhedron-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Polyhedron-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Polyhedron-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Polyhedron-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Polyhedron-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Polyhedron-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Polyhedron-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Polyhedron-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Polyhedron-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Projection">class <strong>Projection</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>##projection(cut&nbsp;=&nbsp;true)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Projection">Projection</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Projection-__init__"><strong>__init__</strong></a>(self, flatPyObj, cut)</dt></dl>
+
+<dl><dt><a name="Projection-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Projection-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Projection-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Projection-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Projection-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Projection-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Projection-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Projection-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Projection-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Projection-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Projection-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Projection-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Projection-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Projection-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Projection-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Projection-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Projection-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Projection-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Projection-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Rotate_extrude">class <strong>Rotate_extrude</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Rotate_extrude">Rotate_extrude</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Rotate_extrude-__init__"><strong>__init__</strong></a>(self, flatPyObj, convexity<font color="#909090">=None</font>, fn<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Rotate_extrude-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Rotate_extrude-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Rotate_extrude-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Rotate_extrude-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Rotate_extrude-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Rotate_extrude-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Rotate_extrude-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Rotate_extrude-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Rotate_extrude-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Rotate_extrude-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Rotate_extrude-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Rotate_extrude-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Rotate_extrude-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Rotate_extrude-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Rotate_extrude-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Rotate_extrude-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Rotate_extrude-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Rotate_extrude-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Rotate_extrude-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="SolidPyObj">class <strong>SolidPyObj</strong></a>(<a href="__builtin__.html#object">__builtin__.object</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="SolidPyObj-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="SolidPyObj-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#SolidPyObj-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="SolidPyObj-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SolidPyObj-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="SolidPyObj-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="SolidPyObj-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="SolidPyObj-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SolidPyObj-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#SolidPyObj-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#SolidPyObj-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="SolidPyObj-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="SolidPyObj-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="SolidPyObj-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="SolidPyObj-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="SolidPyObj-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="SolidPyObj-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#SolidPyObj-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#SolidPyObj-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Sphere">class <strong>Sphere</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>rad=radius<br>
+fa&nbsp;=&nbsp;Angle&nbsp;in&nbsp;degrees<br>
+fs=&nbsp;Angle&nbsp;in&nbsp;mm<br>
+center:&nbsp;If&nbsp;True,&nbsp;<a href="__builtin__.html#object">object</a>&nbsp;is&nbsp;centered&nbsp;at&nbsp;(0,0,0)<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Sphere">Sphere</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Sphere-__init__"><strong>__init__</strong></a>(self, rad, fa<font color="#909090">=None</font>, fs<font color="#909090">=None</font>, fn<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Sphere-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Sphere-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Sphere-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Sphere-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Sphere-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Sphere-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Sphere-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Sphere-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Sphere-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Sphere-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Sphere-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Sphere-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Sphere-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Sphere-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Sphere-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Sphere-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Sphere-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Sphere-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Sphere-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Square">class <strong>Square</strong></a>(<a href="SolidPy.html#SolidPyObj">SolidPyObj</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Square">Square</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Square-__init__"><strong>__init__</strong></a>(self, x, y, center<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Square-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Square-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Square-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Square-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Square-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Square-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Square-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Square-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Square-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Square-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Square-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Square-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Square-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Square-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Square-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Square-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<dl><dt><a name="Square-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Square-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Square-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table> <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Union">class <strong>Union</strong></a>(<a href="SolidPy.html#CGS">CGS</a>)</font></td></tr>
+    
+<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="SolidPy.html#Union">Union</a></dd>
+<dd><a href="SolidPy.html#CGS">CGS</a></dd>
+<dd><a href="SolidPy.html#SolidPyObj">SolidPyObj</a></dd>
+<dd><a href="__builtin__.html#object">__builtin__.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Union-__init__"><strong>__init__</strong></a>(self, solidPyObj1<font color="#909090">=None</font>, solidPyObj2<font color="#909090">=None</font>)</dt></dl>
+
+<dl><dt><a name="Union-renderOSC"><strong>renderOSC</strong></a>(self)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#CGS">CGS</a>:<br>
+<dl><dt><a name="Union-add"><strong>add</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Union-set__tabLvl"><strong>set__tabLvl</strong></a>(self, lvl)</dt></dl>
+
+<hr>
+Methods inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><a name="Union-OSCString"><strong>OSCString</strong></a>(self, protoStr)</dt><dd><tt>Returns&nbsp;the&nbsp;OpenSCAD&nbsp;string&nbsp;to&nbsp;make&nbsp;the&nbsp;<a href="__builtin__.html#object">object</a></tt></dd></dl>
+
+<dl><dt><a name="Union-__add__"><strong>__add__</strong></a>(self, solidPyObj1)</dt><dd><tt>a=x+y&nbsp;calls&nbsp;x.<a href="#Union-__add__">__add__</a>(y)-&gt;a</tt></dd></dl>
+
+<dl><dt><a name="Union-__mul__"><strong>__mul__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Union-__sub__"><strong>__sub__</strong></a>(self, solidPyObj1)</dt></dl>
+
+<dl><dt><a name="Union-color"><strong>color</strong></a>(self, color<font color="#909090">='yellow'</font>, alpha<font color="#909090">=1.0</font>)</dt></dl>
+
+<dl><dt><a name="Union-copy"><strong>copy</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Union-mirror"><strong>mirror</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;mirror&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Union-mirror">mirror</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Union-mirror">mirror</a>(x,y,z)<br>
+mirror&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<dl><dt><a name="Union-multmatrix"><strong>multmatrix</strong></a>(self, m)</dt><dd><tt>Puts&nbsp;a&nbsp;multmatrix&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+***&nbsp;not&nbsp;tested&nbsp;***</tt></dd></dl>
+
+<dl><dt><a name="Union-release"><strong>release</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="Union-rotate"><strong>rotate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>, v<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;rotate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Union-scale"><strong>scale</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;scale&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack</tt></dd></dl>
+
+<dl><dt><a name="Union-translate"><strong>translate</strong></a>(self, x, y<font color="#909090">=None</font>, z<font color="#909090">=None</font>)</dt><dd><tt>Puts&nbsp;a&nbsp;translate&nbsp;transform&nbsp;on&nbsp;the&nbsp;transform&nbsp;stack<br>
+<a href="#Union-translate">translate</a>(&nbsp;[x,y,z])&nbsp;or&nbsp;<a href="#Union-translate">translate</a>(x,y,z)<br>
+translate&nbsp;(1)&nbsp;-&gt;&nbsp;[1,1,1]</tt></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="SolidPy.html#SolidPyObj">SolidPyObj</a>:<br>
+<dl><dt><strong>autoColor</strong> = False</dl>
+
+<dl><dt><strong>colorCnt</strong> = 0</dl>
+
+<dl><dt><strong>colors</strong> = ['blue', 'green', 'orange', 'yellow', 'SpringGreen', 'purple', 'DarkOrchid', 'MistyRose']</dl>
+
+<dl><dt><strong>fa</strong> = None</dl>
+
+<dl><dt><strong>fn</strong> = None</dl>
+
+<dl><dt><strong>fs</strong> = None</dl>
+
+<dl><dt><strong>includeFiles</strong> = []</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-Use"><strong>Use</strong></a>(fileName)</dt></dl>
+ <dl><dt><a name="-boolStr"><strong>boolStr</strong></a>(abool)</dt><dd><tt>retuns&nbsp;a&nbsp;lower&nbsp;case&nbsp;string&nbsp;of&nbsp;'true'&nbsp;or&nbsp;'false'</tt></dd></dl>
+ <dl><dt><a name="-inches"><strong>inches</strong></a>(x)</dt><dd><tt>converts&nbsp;inches&nbsp;to&nbsp;mm</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-writeSCADfile"><strong>writeSCADfile</strong></a>(fileName, *args)</dt><dd><tt>fileName&nbsp;=&nbsp;the&nbsp;SCAD&nbsp;file&nbsp;to&nbsp;save&nbsp;to.&nbsp;Include&nbsp;the&nbsp;'.scad'&nbsp;extension<br>
+args&nbsp;can&nbsp;be&nbsp;<a href="#SolidPyObj">SolidPyObj</a>&nbsp;or&nbsp;lists&nbsp;of&nbsp;<a href="#SolidPyObj">SolidPyObj</a></tt></dd></dl>
+</td></tr></table>
+</body></html>
