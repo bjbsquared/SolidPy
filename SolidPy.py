@@ -533,14 +533,14 @@ class Union(CGS):
 
 
     def renderOSC(self):
-       return CGS.renderOSC(self, "union() {\n")
+        return CGS.renderOSC(self, "union() {\n")
 
 class Difference(CGS):
     def __init__(self, solidObj1 = None, solidObj2 = None):
         CGS.__init__(self, solidObj1, solidObj2)
 
     def renderOSC(self):
-       return CGS.renderOSC(self, "difference() {\n")
+        return CGS.renderOSC(self, "difference() {\n")
 
 class Intersection(CGS):
     def __init__(self, solidObj1 = None, solidObj2 = None):
@@ -548,7 +548,7 @@ class Intersection(CGS):
         CGS.__init__(self, solidObj1, solidObj2)
 
     def renderOSC(self):
-       return CGS.renderOSC(self, "intersection() {\n")
+        return CGS.renderOSC(self, "intersection() {\n")
 
 class Minkowski(CGS):
     def __init__(self, solidObj1 = None, solidObj2 = None):
@@ -556,7 +556,7 @@ class Minkowski(CGS):
         CGS.__init__(self, solidObj1, solidObj2)
 
     def renderOSC(self):
-       return CGS.renderOSC(self, "minkowski() {\n")
+        return CGS.renderOSC(self, "minkowski() {\n")
 
 class Hull(CGS):
     def __init__(self, solidObj1 = None, solidObj2 = None):
@@ -564,7 +564,7 @@ class Hull(CGS):
         CGS.__init__(self, solidObj1, solidObj2)
 
     def renderOSC(self):
-       return CGS.renderOSC(self, "hull() {\n")
+        return CGS.renderOSC(self, "hull() {\n")
 
 class Module(SolidPyObj):
     def __init__(self, name, **kwargs):

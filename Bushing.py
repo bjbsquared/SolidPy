@@ -19,7 +19,7 @@ post_fil_rad = inches(1.0 / 16.0)
 base = Cylinder(h = base_thk, r = base_dia / 2)
 post = Cylinder(h = post_hgt, r = post_dia / 2)
 
-theScrew = FHscrew(size = "#10", length = inches(1.04), angle = 100)
+theScrew = FHscrew(size = "#6", length = inches(1.04), angle = 100)
 screw_hole = theScrew.hole()
 Defaults.augList += [screw_hole]
 AF = AxialFillet(post_dia / 2, base_fil_rad)

@@ -1,0 +1,534 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;}
+body {
+	font:13.34px helvetica,arial,freesans,clean,sans-serif;
+	color:black;
+	line-height:1.4em;
+	background-color: #F8F8F8;
+	padding: 0.7em;
+}
+p {
+	margin:1em 0;
+	line-height:1.5em;
+}
+table {
+	font-size:inherit;
+	font:100%;
+	margin:1em;
+}
+table th{border-bottom:1px solid #bbb;padding:.2em 1em;}
+table td{border-bottom:1px solid #ddd;padding:.2em 1em;}
+input[type=text],input[type=password],input[type=image],textarea{font:99% helvetica,arial,freesans,sans-serif;}
+select,option{padding:0 .25em;}
+optgroup{margin-top:.5em;}
+pre,code{font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;}
+pre {
+	margin:1em 0;
+	font-size:12px;
+	background-color:#eee;
+	border:1px solid #ddd;
+	padding:5px;
+	line-height:1.5em;
+	color:#444;
+	overflow:auto;
+	-webkit-box-shadow:rgba(0,0,0,0.07) 0 1px 2px inset;
+	-webkit-border-radius:3px;
+	-moz-border-radius:3px;border-radius:3px;
+}
+pre code {
+	padding:0;
+	font-size:12px;
+	background-color:#eee;
+	border:none;
+}
+code {
+	font-size:12px;
+	background-color:#f8f8ff;
+	color:#444;
+	padding:0 .2em;
+	border:1px solid #dedede;
+}
+img{border:0;max-width:100%;}
+abbr{border-bottom:none;}
+a{color:#4183c4;text-decoration:none;}
+a:hover{text-decoration:underline;}
+a code,a:link code,a:visited code{color:#4183c4;}
+h2,h3{margin:1em 0;}
+h1,h2,h3,h4,h5,h6{border:0;}
+h1{font-size:170%;border-top:4px solid #aaa;padding-top:.5em;margin-top:1.5em;}
+h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
+h2{font-size:150%;margin-top:1.5em;border-top:4px solid #e0e0e0;padding-top:.5em;}
+h3{margin-top:1em;}
+hr{border:1px solid #ddd;}
+ul{margin:1em 0 1em 2em;}
+ol{margin:1em 0 1em 2em;}
+ul li,ol li{margin-top:.5em;margin-bottom:.5em;}
+ul ul,ul ol,ol ol,ol ul{margin-top:0;margin-bottom:0;}
+blockquote{margin:1em 0;border-left:5px solid #ddd;padding-left:.6em;color:#555;}
+dt{font-weight:bold;margin-left:1em;}
+dd{margin-left:2em;margin-bottom:1em;}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>SolidPy</title>
+</head>
+<body>
+<h1>SolidPy</h1>
+
+<h2>Overview</h2>
+
+<p>SolidPy is a python module that allows generates <a href="http://www.openscad.org">OpenSCAD</a> code from python code. The aim of developing this SolidPy is to simplify and enhance the design experience of code-based, parametric, solid modeling.</p>
+
+<p>Python + SolidPy -> OpenSCAD code -> Solid Model</p>
+
+<h2>So, How do I use it?</h2>
+
+<p>Place SolidPy.py somewhere it your PYTHONPATH or in the directory of the python module that imports it. Write the python code to build your solid model. While your write your code and run it, changes to the output can be observed using OpenSCAD with the &lsquo;Automatic Reload and Compile&rsquo; setting checked.</p>
+
+<p>All the other files seen in the repository are working files that may be of help as examples. They may or may not work as SolidPy is undergoing changes.</p>
+
+<h2>Language Differences</h2>
+
+<p> <em>If some of this looks garbled see readme.html</em></p>
+
+<table>
+<thead>
+<tr>
+<th align="left"> SolidPy </th>
+<th align="left">Open SCAD</th>
+<th align="left">Difference </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"> a = Sphere(r=2)</td>
+<td align="left"> sphere(r=2) </td>
+<td align="left"> First letter Capitalized </td>
+</tr>
+<tr>
+<td align="left"> b = Cube(1,2,3) </td>
+<td align="left"> cube([1,2,3]) </td>
+<td align="left"> Square brackets are optional </td>
+</tr>
+<tr>
+<td align="left"> b.color(&ldquo;red&rdquo;,0.5)</td>
+<td align="left">color(&ldquo;red&rdquo;,0.5) cube([1,2,3]) </td>
+<td align="left"> Objects are transformed using methods </td>
+</tr>
+<tr>
+<td align="left"> b = a.copy()</td>
+<td align="left"> no equivalent</td>
+<td align="left"> Shapes are objects </td>
+</tr>
+<tr>
+<td align="left"> c = a + b </td>
+<td align="left">union(){sphere(r=2) cube([1,2,3])}</td>
+<td align="left"> Easy to read syntax</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Features</h2>
+
+<ul>
+<li>Simple, flexible syntax</li>
+<li>Use of a Python IDE and the Python language is powerful</li>
+<li>Treat objects like objects (not text)</li>
+<li>Use existing <a href="http://www.openscad.org">OpenSCAD</a> modules</li>
+<li>Grow the object tree and pick the fruit you want (instead of taking the whole tree)</li>
+<li>AutoColoring mode</li>
+<li>Reference another solids attributes</li>
+<li>Copy shapes</li>
+<li>SolidPy Class can be extended to suit</li>
+</ul>
+
+
+<h2>SolidPy Classes</h2>
+
+<p>The SolidPy class was designed for maximum inheritance and flexibility. Each are named after the OpenSCAD they represent except the names are capitalized.</p>
+
+<p> Below shows the interface for each class. Treat the arguments for each just as they are for OpenSCAD. Of course there will be differences in syntax. Also some commands will allow a single object or a list of objects to be used as an argument. For specific OpenSCAD information see the <a href="http://en.wikibooks.org/wiki/OpenSCAD_User_Manual">OpenSCAD Users Manual</a>.</p>
+
+<h2>Shapes</h2>
+
+<h3>Cube(self, x, y = None, z = None, center = None) or Cube(self, [x,y,z] center = None)</h3>
+
+<p>Returns a SolidPyObj which represents a cube.</p>
+
+<p>Examples: <code>myBox = Cube([3,4,5])</code> or <code>myBox = Cube(3,4,5)</code></p>
+
+<h3>Cylinder(h, r, r2 = None, fa = None, fs = None, fn = None, center = None)</h3>
+
+<p>Returns a SolidPyObj which represents a cylinder.</p>
+
+<p> example:    <code>myTube = Cylinder(h = 5, r=10, center = True )</code></p>
+
+<h3>Sphere(r, fa = None, fs = None, fn = None)</h3>
+
+<p>Returns a SolidPyObj which represents a cylinder.</p>
+
+<p>Notice that OpenSCAD uses <strong>$</strong>fs and <strong>$</strong>fn while SolidPy drops the <strong>$</strong>.</p>
+
+<p> example: <code>myBall = Sphere(r=5)</code></p>
+
+<h3>DXF_linear_extrude(filename, height, convexity = None, center = None)</h3>
+
+<p>Creates a 3D object by extruding a DXF file. Returns a SolidPyObj object.</p>
+
+<p>   myShape = DXF_linear_extrude(mydxfFile, h=5)</p>
+
+<h3>Linear_extrude(height,center,convexity,twist)</h3>
+
+<p>Extrudes shapes to make 3D object. Returns a SolidPyObj object.</p>
+
+<h3>Import(fileName)</h3>
+
+<p>Imports a file for use in the current OpenSCAD model. Returns a SolidPyObj object.</p>
+
+<h3>Module(moduleName,**kwargs)</h3>
+
+<p>Calls a OpenSCAD Module brought in by the <strong>Use(filename)</strong> command. Arguments to the module must be given in keyworded values. Returns a SolidPyObj object.</p>
+
+<pre><code>Use("Rachet Tooth.scad")
+
+tooth = Module("rachetTooth", ht = 1, thk=8, ra = 16, ba = 80)
+</code></pre>
+
+<h3>Polygon(pointsList, pathList, convexity)</h3>
+
+<p>Returns a SolidPyObj object.</p>
+
+<h3>Polyhedron(points,triangles)</h3>
+
+<p>  Returns a SolidPyObj object.</p>
+
+<h3>Projection(cut = true)</h3>
+
+<p>  Returns a SolidPyObj object.</p>
+
+<h3>Rotate_extrude(convexity = None, fn = None)</h3>
+
+<p> Returns a SolidPyObj object.</p>
+
+<h3>Square([x,y]) or Square(x, y)</h3>
+
+<h2>CGS Operations</h2>
+
+<p>CGS object hold other SolidPy objects as child objects. They perform the CGS operation on the child objects as described below.</p>
+
+<h3>&lsquo;+&rsquo; Operator</h3>
+
+<h3>Union()</h3>
+
+<h3>Union([solidPyobjs])</h3>
+
+<h3>Union(solidObj1 = None, solidObj2 = None)</h3>
+
+<p>Union() returns an empty Union()  object that can be used to add SolidPy objects at a later time
+Union ([objectList]) will create a union that contains the objects in [objectList]
+Union ([objectList1], [objectList2]) will create a union that contains the objects in both lists.</p>
+
+<p>An alternate form of Union is the  <strong>&lsquo;+&rsquo;</strong> operator.</p>
+
+<pre><code>a = Cube(5,5,5)
+b = sphere(r = 6)
+myUnion = a + b
+</code></pre>
+
+<ul>
+<li>If &lsquo;a&rsquo; Union() then &lsquo;b&rsquo; is added to the &lsquo;a&rsquo; Union()</li>
+<li>If &lsquo;b&rsquo; Union() then &lsquo;a&rsquo; is added to the &lsquo;b&rsquo; Union()</li>
+<li>If neither &lsquo;'a or 'b&rsquo; is a Union then both are added to a new union.</li>
+</ul>
+
+
+<h3>&lsquo;-&rsquo; Operator</h3>
+
+<h3>Difference(solidObj1 = None, solidObj2 = None)</h3>
+
+<h3>Difference()</h3>
+
+<h3>Difference([solidPyobjs])</h3>
+
+<p>Difference() returns an empty Difference() that can be used to add SolidPy objects at a later time.
+Difference ([objectList]) will create a Difference() that contains the objects in [objectList]
+Difference ([objectList1], [objectList2]) will create a Difference() that contains the objects in both lists.
+The first object added to the Difference() object is the one that all other will be subtracted from.</p>
+
+<p>An alternate form of Union is the  <strong>&lsquo;-&rsquo;</strong> operator.</p>
+
+<pre><code>a = Cube(5,5,5)
+b = sphere(r = 6)
+myDiff = a - b
+</code></pre>
+
+<ul>
+<li>If &lsquo;a&rsquo; is a Difference() then &lsquo;b&rsquo; is subtracted from  the &lsquo;a&rsquo; Difference()</li>
+<li>If &lsquo;a&rsquo; is not a Difference() object a new is made placing &lsquo;a&rsquo; as its first child from which &lsquo;b&rsquo; will be subtracted.</li>
+</ul>
+
+
+<h3>&lsquo;*&rsquo; Operator</h3>
+
+<h3>Intersection(solidObj1 = None, solidObj2 = None)</h3>
+
+<h3>Intersection()</h3>
+
+<h3>Intersection([solidPyobjs])</h3>
+
+<p>Intersection() returns an empty Intersection() that can be used to add SolidPy objects at a later time.
+Intersection ([objectList]) will create an Intersection() that contains the objects in [objectList]
+Intersection ([objectList1], [objectList2]) will create an Intersection that contains the objects in both lists.
+The all objects added to the Intersection() object will define the intersection.</p>
+
+<p>An alternate form of Union is the  <strong>&lsquo;*&rsquo;</strong> operator.</p>
+
+<pre><code>a = Cube(5,5,5)
+b = sphere(r = 6)
+myIntersect = a * b
+</code></pre>
+
+<ul>
+<li>If &lsquo;a&rsquo; is an Intersection() then &lsquo;b&rsquo; is intersected with the &lsquo;a&rsquo; Intersection()</li>
+<li>If &lsquo;b&rsquo; is an Intersection() then &lsquo;a&rsquo; is intersected with the &lsquo;b&rsquo; Intersection()</li>
+<li>If &lsquo;a&rsquo; or &lsquo;b&rsquo; are not  Intersection() objects, a new one is made.</li>
+</ul>
+
+
+<h3>Minkowski( solidObj1 = None, solidObj2 = None)</h3>
+
+<p>Returns the Minkowski parent of solidObj1 and solidObj2.</p>
+
+<h3>Hull(solidObj1 = None, solidObj2 = None)</h3>
+
+<p>Returns the Minkowski parent of solidObj1 and solidObj2.</p>
+
+<h2>Transforms</h2>
+
+<p>Transforms are methods of SolidPy objects. Transforms are kept in the objects transform stack.</p>
+
+<h3>translate(x,y,z)</h3>
+
+<h3>translate([x,y,z])</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left"> SolidPy </th>
+<th align="left">Open SCAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"> a = Sphere(r=2)</td>
+<td align="left">sphere(r=2)</td>
+</tr>
+<tr>
+<td align="left"> a.translate(2,4,6)</td>
+<td align="left"> translate([2,4,6]){sphere(r=2)}</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>mirror(x,y,z)</h3>
+
+<h3>mirror([x,y,z])</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left"> SolidPy </th>
+<th align="left">Open SCAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"> a = Sphere(r=2)</td>
+<td align="left">sphere(r=2)</td>
+</tr>
+<tr>
+<td align="left"> a.translate(2,4,6)</td>
+<td align="left"> translate([2,4,6]){sphere(r=2)}</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>multmatrix(m)</h3>
+
+<p>m is a 4x4 matrix.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"> SolidPy </th>
+<th align="left">Open SCAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"> a = Sphere(r=2)</td>
+<td align="left">sphere(r=2)</td>
+</tr>
+<tr>
+<td align="left"> a.multmatrix(m)</td>
+<td align="left"> multmatrix(m){sphere(r=2)}</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>scale(x,y,z)</h3>
+
+<h3>scale([x,y,z])</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left"> SolidPy </th>
+<th align="left">Open SCAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"> a = Sphere(r=2)</td>
+<td align="left">sphere(r=2)</td>
+</tr>
+<tr>
+<td align="left"> a.scale(2,4,6)</td>
+<td align="left"> scale([2,4,6]){sphere(r=2)}</td>
+</tr>
+</tbody>
+</table>
+
+
+<h3>color(&ldquo;color&rdquo;,alpha)</h3>
+
+<h3>color([r,g,b],alpha)</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left"> SolidPy </th>
+<th align="left">Open SCAD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"> a = Sphere(r=2)</td>
+<td align="left">sphere(r=2)</td>
+</tr>
+<tr>
+<td align="left"> a.color(&ldquo;red&rdquo;, 0.5)</td>
+<td align="left"> color(&ldquo;red&rdquo;, 0.5){sphere(r=2)}</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Utility</h2>
+
+<h3>Comment</h3>
+
+<p>Each object can have a comment applied to  which will help identify it  in the OpenSCAD code.</p>
+
+<pre><code>a=Cube(1,2,3)
+a.comment = "Here is my Cube!"
+</code></pre>
+
+<h3>copy(SolidPyObj)</h3>
+
+<p>Copy creates an exact duplicate of the solid object except the parent of the duplicate is set to <code>None</code> and children are duplicates of the original.</p>
+
+<pre><code> myBox = Cube(4,5,6)
+ myNewBox = myBox.copy()
+</code></pre>
+
+<h3>use(&ldquo;filename.scad&rdquo;)</h3>
+
+<p>This loads an OpenSCAD file in order to access modules within that file.
+Note that <strong>include()</strong> is not implemented.</p>
+
+<h3>writeSCADfile(fileName, *args):</h3>
+
+<p>fileName = the SCAD file to save to. Include the &lsquo;.scad&rsquo; extension
+*args can be SolidPy objects or lists of SolidPy objects.</p>
+
+<h3>Extras</h3>
+
+<h3>inches(x)</h3>
+
+<p>Everything in OpenSCAD is assumed to be millimeters(mm). inches(X) returns 25.4 * X to
+convert x that is in inches to mm.</p>
+
+<h2>Modifiers</h2>
+
+<p>Each object has modifiers that are found in OpenSCAD. They are boolean attributes.</p>
+
+<ul>
+<li><strong>root</strong></li>
+<li><strong>disable</strong></li>
+<li><strong>background</strong></li>
+<li><strong>debug</strong></li>
+</ul>
+
+
+<p>Activate these as needed by:</p>
+
+<pre><code>  a = Cube(1,2,3)
+  a.disable = True
+</code></pre>
+
+<h2>Defaults</h2>
+
+<p>Defaults are to be set by the user for their own taste.</p>
+
+<h3>tab</h3>
+
+<p>By default &lsquo;Defaults.tab = &ldquo; &rdquo; * 4&rsquo; This set the tab length in the OpenSCAD code written by writeSCADfile().</p>
+
+<h3>includeFiles</h3>
+
+<p>Defaults.includeFiles is modified by the <strong>Use(filename)</strong> command to hold files to be included. It can also be modified directly.</p>
+
+<h3>fs</h3>
+
+<p>Defaults.fs sets the Special Variable in OpenSCAD <strong>$fs</strong> at the beginning of the OpenSCAD file.</p>
+
+<h3>fn</h3>
+
+<p>Defaults.fn sets the Special Variable in OpenSCAD <strong>$fn</strong> at the beginning of the OpenSCAD file.</p>
+
+<h3>fa</h3>
+
+<p>Defaults.fa sets the Special Variable in OpenSCAD <strong>$fa</strong> at the beginning of the OpenSCAD file.</p>
+
+<h3>autoColor</h3>
+
+<p>When <code>Default.autoColor == True</code> colors are automatically applied to all objects at their creation given by the order set in the Default.color[] list</p>
+
+<h3>colors</h3>
+
+<p>Defaults.colors are used by the autoColor setting to automatically apply a color to a SolidPy object when it is created.</p>
+
+<pre><code>Defaults.colors = ["blue", "green", "orange", "yellow", "SpringGreen"]
+</code></pre>
+
+<p>Colors can be added or changed as required. Colors can be found at <a href="http://en.wikibooks.org/wiki/OpenSCAD_User_Manual">OpenSCAD Users Manual</a>.</p>
+</body>
+</html>

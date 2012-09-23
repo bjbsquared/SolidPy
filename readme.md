@@ -1,7 +1,5 @@
 # SolidPy 
-
-  
-  
+ 
 ## Overview
 [OSC]:http://www.openscad.org
 [OSCUM]:http://en.wikibooks.org/wiki/OpenSCAD_User_Manual
@@ -10,14 +8,19 @@ SolidPy is a python module that allows generates [OpenSCAD][OSC] code from pytho
 
 Python + SolidPy -> OpenSCAD code -> Solid Model
 
+##So, How do I use it?
+Place SolidPy.py somewhere it your PYTHONPATH or in the directory of the python module that imports it. Write the python code to build your solid model. While your write your code and run it, changes to the output can be observed using OpenSCAD with the 'Automatic Reload and Compile' setting checked.
+
+All the other files seen in the repository are working files that may be of help as examples. They may or may not work as SolidPy is undergoing changes.
+
 ## Language Differences
+ *If some of this looks garbled see readme.html* 
  
- 
- | SolidPy |Open SCAD|Difference
- |:------- | :-------- | :---------
- | a = Sphere(r=2)| sphere(r=2) | First letter Capitalized
- | b = Cube(1,2,3) | cube([1,2,3]) | Square brackets are optional
- | a.color("red",0.5)|color("red",0.5) cube([1,2,3]) | Objects are transformed using methods |
+ | SolidPy |Open SCAD|Difference |
+ |:------- | :-------- | :--------- |
+ | a = Sphere(r=2)| sphere(r=2) | First letter Capitalized |
+ | b = Cube(1,2,3) | cube([1,2,3]) | Square brackets are optional |
+ | b.color("red",0.5)|color("red",0.5) cube([1,2,3]) | Objects are transformed using methods |
  | b = a.copy()| no equivalent| Shapes are objects |
  | c = a + b |union(){sphere(r=2) cube([1,2,3])}| Easy to read syntax|
  
@@ -207,6 +210,11 @@ m is a 4x4 matrix.
  | a.color("red", 0.5)| color("red", 0.5){sphere(r=2)} 
 
 ##Utility
+### Comment
+Each object can have a comment applied to  which will help identify it  in the OpenSCAD code. 
+
+    a=Cube(1,2,3)
+    a.comment = "Here is my Cube!"
 
 ###copy(SolidPyObj)
 Copy creates an exact duplicate of the solid object except the parent of the duplicate is set to `None` and children are duplicates of the original.
@@ -226,9 +234,20 @@ fileName = the SCAD file to save to. Include the '.scad' extension
 ###inches(x)
 Everything in OpenSCAD is assumed to be millimeters(mm). inches(X) returns 25.4 * X to 
 convert x that is in inches to mm.
+## Modifiers
+Each object has modifiers that are found in OpenSCAD. They are boolean attributes.
+
+* **root** 
+* **disable**
+* **background**
+* **debug** 
+
+Activate these as needed by:
 
 
-
+      a = Cube(1,2,3)
+      a.disable = True
+    
 ##Defaults
 Defaults are to be set by the user for their own taste.
 ###tab
@@ -251,6 +270,6 @@ Defaults.colors are used by the autoColor setting to automatically apply a color
 
     Defaults.colors = ["blue", "green", "orange", "yellow", "SpringGreen"]
 
-Colors can be found at [OpenSCAD][OSC].
+Colors can be added or changed as required. Colors can be found at [OpenSCAD Users Manual][OSCUM].
 
 

@@ -2,15 +2,15 @@ from SolidPy import *
 from math import tan, radians
 
 class FHscrew(object):
-    def __init__(self, size = "#10", length = 10, angle = 100):
+    def __init__(self, size = "#6", length = 10, angle = 100):
         """
-        size="#10" or "M5"
+        size="#6" or "M5"
         length in mm
         angle = screwhead angle
         """
         self.size = size
         self.length = length
-        if self.size == "#10":
+        if self.size == "#6":
             self.thd = inches(0.149)
             self.angle = angle
             self.cs_dia = inches(0.295)
@@ -33,7 +33,7 @@ class FHscrew(object):
         return screw
 def main():
 
-    theScrew = FHscrew(size = "#10", length = inches(1.04), angle = 100)
+    theScrew = FHscrew(size = "#6", length = inches(1.04), angle = 100)
     junk = theScrew.hole()
     writeSCADfile('junk.scad', junk)
 if __name__ == '__main__':
