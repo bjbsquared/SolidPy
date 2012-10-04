@@ -252,15 +252,14 @@ class Sphere(SolidPyObj):
     r=radius
     fa = Angle in degrees
     fs= Angle in mm
-    center: If True, object is centered at (0,0,0)
     """
     def __init__(self, r, fa = None, fs = None, fn = None):
         SolidPyObj.__init__(self)
         self.r = r
         self.fa = Defaults.fa
         self.fa = fa
-        self.fa = fs
-        self.fa = fn
+        self.fs = fs
+        self.fn = fn
 
     def renderOSC(self):
         protoStr = "sphere(r = %s" % str(self.r)
@@ -336,7 +335,7 @@ class Linear_extrude(SolidPyObj):
         if self.twist:
             protoStr += ", twist = %s" % self.twist
         protoStr += ") "
-        protoStr += self.SolidPyObj.renderOSC()
+        protoStr += self.solidObj.renderOSC()
         return self.OSCString(protoStr)
 
 
